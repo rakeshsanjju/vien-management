@@ -1645,9 +1645,9 @@ hr {
   .st-site-header.st-style2 .st-social-btn.st-style1 li a:hover {
     color: #666;
   }
-  .st-site-header.st-style2 .st-main-header-left {
+  /* .st-site-header.st-style2 .st-main-header-left {
     margin-bottom: 24px;
-  }
+  } */
   .st-site-header.st-style2 .st-btn.st-style1 {
     margin-top: 20px;
     font-size: 14px;
