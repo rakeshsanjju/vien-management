@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="">
   <!-- Page Title -->
-  <title>Hyderabad Vien Center</title>
+  <title>Hyderabad Vein Center</title>
   <!-- Favicon Icon -->
   <link rel="icon" href="assets/img/MainLogo.png" />
   <!-- Stylesheets -->
@@ -49,6 +49,36 @@
     overflow: hidden;
     /* Prevent scrolling of the background */
   }
+
+  /* Make modal content scrollable */
+.modal-content {
+  max-height: 80vh; /* Set max height */
+  overflow-y: auto; /* Allow vertical scrolling */
+  padding: 20px;
+}
+
+/* Ensure button is always visible at the bottom */
+.st-height-b40 {
+  margin-bottom: 50px; /* Adjust space for button visibility */
+}
+
+/* Ensure proper visibility of content and button in mobile view */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    max-height: 60vh; /* Adjust for mobile */
+    padding: 10px; /* Adjust padding */
+  }
+  
+  .st-section-heading, .st-form-field {
+    padding: 10px 0; /* Ensure adequate padding */
+  }
+
+  .st-btn {
+    position: sticky;
+    bottom: 10px; /* Sticky button */
+    width: 100%; /* Full width button */
+  }
+}
 
   .st-site-header {
     z-index: 1000;
@@ -209,7 +239,7 @@
                 <path
                   d="m434.146 59.882h-389.234c-24.766 0-44.912 20.146-44.912 44.912v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159l-200.355 173.649-200.356-173.649c1.769-.736 3.704-1.159 5.738-1.159zm0 299.411h-389.234c-8.26 0-14.971-6.71-14.971-14.971v-251.648l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z" />
               </svg>
-              <a href="mailto:info@hyderabadviencenter.com">info@hyderabadviencenter.com</a>
+              <a href="mailto:info@hyderabadveincenter.com">info@hyderabadveincenter.com</a>
             </li>
             <!-- Phone -->
             <li>
@@ -338,7 +368,7 @@
               </div>
               <h2 class="st-iconbox-title">No Cutting or Stitching
               </h2>
-              <div class="st-iconbox-text"> We only provide non-surgical treatments that not cause much pain.</div>
+              <div class="st-iconbox-text"> We only provide non-surgical treatments that do not cause much pain.</div>
             </div>
             <div class="st-height-b0 st-height-lg-b30"></div>
           </div><!-- .col -->
@@ -376,9 +406,9 @@
             <div class="st-iconbox st-style1">
               <div class="st-iconbox-icon st-green-box">
 
-                <img src="assets/img/usfda-certificate-service.jpg" alt="shape1" style="height: 50px; width: 50px;">
+                <img src="assets/img/usfda-certificate-service.png" alt="shape1" style="height: 50px; width: 50px;">
               </div>
-              <h2 class="st-iconbox-title">USFDA Treatments
+              <h2 class="st-iconbox-title">USFDA Treatments.
               </h2>
               <div class="st-iconbox-text"> We follow international standards of treatment</div>
             </div>
@@ -425,7 +455,7 @@
       <div class="st-height-b120 st-height-lg-b80"></div>
       <div class="container">
         <div class="st-section-heading st-style1">
-          <h2 class="st-section-heading-title">Before and after procedures</h2>
+          <h2 class="st-section-heading-title">Before and After </h2>
 
           <div class="st-section-heading-subtitle">Our varicose veins treatments provide excellent results that relieve
             the symptoms <br>and also provide cosmetic improvements</div>
@@ -482,7 +512,7 @@
                     </div>
                   </div>
                   <div class="st-testimonial-text">Excellent sevice overall from all the staff. Experienced doctors add
-                    all the value to the hospital. Truly delighted to have experience the service.</div>
+                    all the value to the hospital. Truly delighted to have experienced the service.</div>
                   <div class="st-quote"><i class="fas fa-quote-right"></i></div>
                 </div>
               </div><!-- .slick-slide-in -->
@@ -509,8 +539,8 @@
                       <!-- <div class="st-testimonial-designation">Executive</div> -->
                     </div>
                   </div>
-                  <div class="st-testimonial-text">A very good hospital particularly in respect of varicos veins
-                    treatment. Very advance treatment with radiofrequency ablation.</div>
+                  <div class="st-testimonial-text">A very good hospital particularly in respect of varicose veins
+                    treatment. Very advanced treatment with radiofrequency ablation.</div>
                   <div class="st-quote"><i class="fas fa-quote-right"></i></div>
                 </div>
               </div><!-- .slick-slide-in -->
@@ -558,8 +588,9 @@
                       </g>
                     </svg>
                   </div>
-                  <h2 class="st-funfact-number st-counter">30</h2>
-                  <div class="st-funfact-title">Years of experience</div>
+                  <h2 class="st-funfact-number">30+</h2>
+
+                  <div class="st-funfact-title">Years of Experience</div>
                 </div>
                 <div class="st-height-b30 st-height-lg-b30"></div>
               </div><!-- .col -->
@@ -639,7 +670,8 @@
                       </g>
                     </svg>
                   </div>
-                  <h2 class="st-funfact-number st-counter">10000</h2>
+                  <h2 class="st-funfact-number">10,000+</h2>
+
                   <div class="st-funfact-title">Happy Patients</div>
                 </div>
                 <div class="st-height-b30 st-height-lg-b30"></div>
@@ -723,8 +755,11 @@
                       </g>
                     </svg>
                   </div>
-                  <h2 class="st-funfact-number st-counter"> 3 </h2>
-                  <div class="st-funfact-title">Qualified Doctors</div>
+                  <h2>US &amp; UK</h2>
+
+
+
+                  <div class="st-funfact-title">Qualified Doctor</div>
                 </div>
                 <div class="st-height-b30 st-height-lg-b30"></div>
               </div><!-- .col -->
@@ -741,7 +776,7 @@
                       </g>
                     </svg>
                   </div>
-                  <h2 class="st-funfact-number st-counter"><span>98%</span></h2>
+                  <h2 class="st-funfact-number">98%</h2>
 
                   <div class="st-funfact-title"> Success Rate</div>
                 </div>
@@ -793,9 +828,7 @@
                   Are Varicose Veins a Serious Health Problem?
                   <span class="st-accordian-toggle fa fa-angle-down"></span>
                 </div>
-                <div class="st-accordian-body">Varicose veins is a progressive disease. It may cause tolerable symptoms
-                  like burning and itching, but as the condition becomes more serious, varicose veins cause swelling and
-                  painful ulcers. Early treatment is required to keep your body pain-free and your venous system health.
+                <div class="st-accordian-body">Varicose veins is a progressive disease. It may cause tolerable symptoms like burning and itching, but as the condition becomes more serious, varicose veins cause swelling and painful ulcers. Early treatment is required to keep your body pain-free and your venous system healthy.
                 </div>
               </div><!-- .st-accordian -->
               <div class="st-accordian">
@@ -803,9 +836,7 @@
                   How Are Varicose Veins Treated?
                   <span class="st-accordian-toggle fa fa-angle-down"></span>
                 </div>
-                <div class="st-accordian-body">At Hyderabad Vein Center, only non-surgical methods are used to treat
-                  varicose veins. Local anaesthesia is used before the procedure, so you will not feel any pain, and you
-                  can start walking within minutes of the procedure.
+                <div class="st-accordian-body">At Hyderabad Vein Center, only non-surgical methods are used to treat varicose veins. Local anaesthesia is used before the procedure, so you will not feel any pain, and you can start walking within a few hours of the procedure.
                 </div>
               </div><!-- .st-accordian -->
               <div class="st-accordian">
@@ -813,8 +844,7 @@
                   Will Insurance Cover My Treatment?
                   <span class="st-accordian-toggle fa fa-angle-down"></span>
                 </div>
-                <div class="st-accordian-body">We accept most major insurances in India. However, extent and details of
-                  coverage depend on your insurance plan. Please note that we do not accept Aarogyasri Health Insurance.
+                <div class="st-accordian-body">We accept most major insurances in India. However, the amount of coverage depends on your insurance plan. Please note that we do not accept Aarogyasri Health Insurance.
                 </div>
               </div><!-- .st-accordian -->
               <div class="st-accordian">
@@ -946,7 +976,7 @@
           <h2 class="st-section-heading-title">Book Your Appointment</h2>
           <div class="st-seperator"></div>
           <div class="st-section-heading-subtitle">
-            Contact Us Now on +91 9989527715
+            Contact Us Now on +91 7207947968
             & Get Ultrasound Doppler Scan Worth ₹4500 for FREE.
           </div>
         </div>
@@ -1182,6 +1212,11 @@
     </div>
   </div>
   <!-- End Video Popup -->
+
+  <script>
+  
+
+  </script>
 
   <!-- Scripts -->
   <script src="assets/js/vendor/modernizr-3.5.0.min.js"></script>
