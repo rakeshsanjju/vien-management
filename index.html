@@ -51,34 +51,43 @@
   }
 
   /* Make modal content scrollable */
-.modal-content {
-  max-height: 80vh; /* Set max height */
-  overflow-y: auto; /* Allow vertical scrolling */
-  padding: 20px;
-}
-
-/* Ensure button is always visible at the bottom */
-.st-height-b40 {
-  margin-bottom: 50px; /* Adjust space for button visibility */
-}
-
-/* Ensure proper visibility of content and button in mobile view */
-@media screen and (max-width: 768px) {
   .modal-content {
-    max-height: 60vh; /* Adjust for mobile */
-    padding: 10px; /* Adjust padding */
-  }
-  
-  .st-section-heading, .st-form-field {
-    padding: 10px 0; /* Ensure adequate padding */
+    max-height: 80vh;
+    /* Set max height */
+    overflow-y: auto;
+    /* Allow vertical scrolling */
+    padding: 20px;
   }
 
-  .st-btn {
-    position: sticky;
-    bottom: 10px; /* Sticky button */
-    width: 100%; /* Full width button */
+  /* Ensure button is always visible at the bottom */
+  .st-height-b40 {
+    margin-bottom: 50px;
+    /* Adjust space for button visibility */
   }
-}
+
+  /* Ensure proper visibility of content and button in mobile view */
+  @media screen and (max-width: 768px) {
+    .modal-content {
+      max-height: 60vh;
+      /* Adjust for mobile */
+      padding: 10px;
+      /* Adjust padding */
+    }
+
+    .st-section-heading,
+    .st-form-field {
+      padding: 10px 0;
+      /* Ensure adequate padding */
+    }
+
+    .st-btn {
+      position: sticky;
+      bottom: 10px;
+      /* Sticky button */
+      width: 100%;
+      /* Full width button */
+    }
+  }
 
   .st-site-header {
     z-index: 1000;
@@ -268,79 +277,42 @@
       <div class="container">
         <div class="st-main-header-in">
           <div class="st-main-header-left">
-            <a class="st-site-branding" href="index.html"><img src="assets/img/MainLogo.png" alt="Nischinto"
-                style="height: 45px; width: 142px;"></a>
+            <a class="st-site-branding" href="index.html"><img src="assets/img/MainLogo.png"
+                style="height: 75px; width: 250px;" alt="Nischinto" />
+            </a>
           </div>
           <div class="st-main-header-right">
             <div class="st-nav">
               <ul class="st-nav-list st-onepage-nav">
-                <li><a href="#home" class="st-smooth-move">Home</a></li>
-                <li><a href="#about" class="st-smooth-move">About</a></li>
-                <li><a href="#procedure" class="st-smooth-move">Before & After </a></li>
-                <li><a href="#gallery" class="st-smooth-move">Testimonials</a></li>
-                <li><a href="#faq" class="st-smooth-move">FAQ</a></li>
-                <li><a href="#contact" class="st-smooth-move">Contact</a></li>
-
+                <li><a href="#home" class="st-smooth-move" data-target="home">Home</a></li>
+                <li><a href="#about" class="st-smooth-move" data-target="about">About</a></li>
+                <li><a href="#before" class="st-smooth-move" data-target="before">Before & After</a></li>
+                <li><a href="#gallery" class="st-smooth-move" data-target="gallery">Testimonials</a></li>
+                <li><a href="#faq" class="st-smooth-move" data-target="faq">FAQ</a></li>
+                <li><a href="#contact" class="st-smooth-move" data-target="contact">Contact</a></li>
               </ul>
             </div>
-
-          </div>
+          </div>          
         </div>
       </div>
     </div>
   </header>
   <!-- End Header Section -->
 
-  <div class="st-content" id="home">
+  <div class="st-content" id="home  ">
     <!-- Start Hero Seciton -->
 
-    <div class="st-hero-wrap st-color1 st-gray-bg overflow-hidden st-shape-wrap">
-      <div class="st-shape1"><img src="assets/img/shape/contact-shape1.svg" alt="shape1"></div>
-      <div class="st-shape2"><img src="assets/img/shape/contact-shape2.svg" alt="shape2"></div>
-      <div class="st-wave-animation"></div>
-      <div class="st-wave-animation st-wave-animation-2"></div>
+    <!-- <div class="st-hero-wrap  st-shape-wrap">
+      <div class="st-shape1"><img src="assets/img/banner111.jpeg"   object-fit: contain;" alt="shape1"></div>
+      
+      
       <div class="st-hero st-style1 text-center">
-        <div class="container">
-          <div class="st-hero-text">
-            <h1 class="st-hero-title cd-headline clip">
-              Hyderabad’s Best Vein Care Center.
-              <!-- <span class="cd-words-wrapper">
-                <b class="is-visible">Crutches.</b>
-                <b>Laboratory.</b>
-                
-              </span> -->
-            </h1>
-            <div class="st-hero-subtitle">
-              <h3>Varicose Veins Treatment by Internationally-Qualified Doctor.</h3>
-            </div>
-            <div class="st-hero-btn">
-              <a href="#contact" class="st-btn st-style1 st-color1 st-smooth-move">Book Your Appointment</a>
-            </div>
-            <div class="st-hero-btn" style="margin-top: 10px;">
-              <a href="tel:+917207947968" class="st-btn st-style1 st-color1 st-smooth-move">
-                <svg enable-background="new 0 0 512.021 512.021" viewBox="0 0 512.021 512.021"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style="height: 20px; width: 20px; vertical-align: middle; margin-right: 8px; fill: white;">
-                  <g>
-                    <path
-                      d="m367.988 512.021c-16.528 0-32.916-2.922-48.941-8.744-70.598-25.646-136.128-67.416-189.508-120.795s-95.15-118.91-120.795-189.508c-8.241-22.688-10.673-46.108-7.226-69.612 3.229-22.016 11.757-43.389 24.663-61.809 12.963-18.501 30.245-33.889 49.977-44.5 21.042-11.315 44.009-17.053 68.265-17.053 7.544 0 14.064 5.271 15.645 12.647l25.114 117.199c1.137 5.307-.494 10.829-4.331 14.667l-42.913 42.912c40.482 80.486 106.17 146.174 186.656 186.656l42.912-42.913c3.837-3.837 9.36-5.466 14.667-4.331l117.199 25.114c7.377 1.581 12.647 8.101 12.647 15.645 0 24.256-5.738 47.224-17.054 68.266-10.611 19.732-25.999 37.014-44.5 49.977-18.419 12.906-39.792 21.434-61.809 24.663-6.899 1.013-13.797 1.518-20.668 1.519zm-236.349-479.321c-31.995 3.532-60.393 20.302-79.251 47.217-21.206 30.265-26.151 67.49-13.567 102.132 49.304 135.726 155.425 241.847 291.151 291.151 34.641 12.584 71.867 7.64 102.132-13.567 26.915-18.858 43.685-47.256 47.217-79.251l-95.341-20.43-44.816 44.816c-4.769 4.769-12.015 6.036-18.117 3.168-95.19-44.72-172.242-121.772-216.962-216.962-2.867-6.103-1.601-13.349 3.168-18.117l44.816-44.816z" />
-                    <path
-                      d="m496.02 272c-8.836 0-16-7.164-16-16 0-123.514-100.486-224-224-224-8.836 0-16-7.164-16-16s7.164-16 16-16c68.381 0 132.668 26.628 181.02 74.98s74.98 112.639 74.98 181.02c0 8.836-7.163 16-16 16z" />
-                    <path
-                      d="m432.02 272c-8.836 0-16-7.164-16-16 0-88.224-71.776-160-160-160-8.836 0-16-7.164-16-16s7.164-16 16-16c105.869 0 192 86.131 192 192 0 8.836-7.163 16-16 16z" />
-                    <path
-                      d="m368.02 272c-8.836 0-16-7.164-16-16 0-52.935-43.065-96-96-96-8.836 0-16-7.164-16-16s7.164-16 16-16c70.58 0 128 57.42 128 128 0 8.836-7.163 16-16 16z" />
-                  </g>
-                </svg>
-                +91 7207947968
-              </a>
-            </div>
-
-
-            <div class="st-height-b10 st-height-lg-b10"></div>
-          </div>
-        </div>
+        
       </div>
+    </div> -->
+
+    <div>
+      <img src="assets/img/banner111.jpeg"   object-fit: contain;" alt="shape1">
     </div>
     <!-- End Hero Seciton -->
 
@@ -354,35 +326,31 @@
               <div class="st-iconbox-icon st-purple-box">
                 <img src="assets/img/F treatment-1.png" alt="shape1" style="height: 50px; width: 50px;">
               </div>
-              <h2 class="st-iconbox-title">Fast Treatments
-              </h2>
+              <h2 class="st-iconbox-title">Fast Treatments</h2>
               <div class="st-iconbox-text">Most of our treatments take around one hour.</div>
             </div>
             <div class="st-height-b0 st-height-lg-b30"></div>
-          </div><!-- .col -->
+          </div>
           <div class="col-lg-4">
             <div class="st-iconbox st-style1">
               <div class="st-iconbox-icon st-green-box">
-
                 <img src="assets/img/No-1.png" alt="shape1" style="height: 50px; width: 50px;">
               </div>
-              <h2 class="st-iconbox-title">No Cutting or Stitching
-              </h2>
-              <div class="st-iconbox-text"> We only provide non-surgical treatments that do not cause much pain.</div>
+              <h2 class="st-iconbox-title">No Cutting or Stitching</h2>
+              <div class="st-iconbox-text">We only provide non-surgical treatments that do not cause much pain.</div>
             </div>
             <div class="st-height-b0 st-height-lg-b30"></div>
-          </div><!-- .col -->
+          </div>
           <div class="col-lg-4">
             <div class="st-iconbox st-style1">
               <div class="st-iconbox-icon st-red-box">
                 <img src="assets/img/no-hospitalization.png" alt="shape1" style="height: 50px; width: 50px;">
               </div>
-              <h2 class="st-iconbox-title">No Hospitalisation
-              </h2>
-              <div class="st-iconbox-text"> Most patients go home on the same day of treatment.</div>
+              <h2 class="st-iconbox-title">No Hospitalisation</h2>
+              <div class="st-iconbox-text">Most patients go home on the same day of treatment.</div>
             </div>
             <div class="st-height-b0 st-height-lg-b30"></div>
-          </div><!-- .col -->
+          </div>
         </div>
       </div>
     </section>
@@ -451,7 +419,7 @@
     <!-- End gallery Section -->
 
     <!-- Start Before After -->
-    <section class="st-before-after-section st-dynamic-bg st-bg" data-src="assets/img/before-after-bg.jpg">
+    <section class="st-before-after-section st-dynamic-bg st-bg" data-src="assets/img/before-after-bg.jpg" id="before">
       <div class="st-height-b120 st-height-lg-b80"></div>
       <div class="container">
         <div class="st-section-heading st-style1">
@@ -463,7 +431,7 @@
         <div class="st-height-b40 st-height-lg-b40"></div>
       </div>
       <div class="st-before-after-wrap">
-        <div class="container">
+        <div class="container" style="height: 460px; width: 620px;">
           <div class="st-before-after-in">
             <div class="st-before-after">
               <div class="st-after st-single-slide st-dynamic-bg" data-src="assets/img/after.jpeg"></div>
@@ -514,6 +482,20 @@
                   <div class="st-testimonial-text">Excellent sevice overall from all the staff. Experienced doctors add
                     all the value to the hospital. Truly delighted to have experienced the service.</div>
                   <div class="st-quote"><i class="fas fa-quote-right"></i></div>
+                  <div style="display: flex; flex-direction: row;">
+                    <img
+                      src="https://th.bing.com/th/id/OIP.lsGmVmOX789951j9Km8RagHaHa?w=159&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                      alt="shape1" style="height: 30px; width: 30px; margin-top: 20px;">
+                    <div>
+                      <h6 style="margin-left: 15px; margin-top: 25px;">4.0/5.0</h6>
+                    </div>
+                    <div style="margin-left: 15px;">
+                      <img
+                        src="https://th.bing.com/th/id/OIP.gghRLbG7PwD-o9smBv3vZAHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                        alt="shape1" style="height: 60px; width: 80px; margin-top: 3px;">
+                    </div>
+
+                  </div>
                 </div>
               </div><!-- .slick-slide-in -->
               <div class="slick-slide-in">
@@ -528,6 +510,20 @@
                   <div class="st-testimonial-text">Good hospital for treatment of varicose veins. Experienced doctor and
                     friendly staff. Great support provided by the insurance staff.</div>
                   <div class="st-quote"><i class="fas fa-quote-right"></i></div>
+                  <div style="display: flex; flex-direction: row;">
+                    <img
+                      src="https://th.bing.com/th/id/OIP.lsGmVmOX789951j9Km8RagHaHa?w=159&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                      alt="shape1" style="height: 30px; width: 30px; margin-top: 20px;">
+                    <div>
+                      <h6 style="margin-left: 15px; margin-top: 25px;">5.0/5.0</h6>
+                    </div>
+                    <div style="margin-left: 15px;">
+                      <img
+                        src="https://www.creativefabrica.com/wp-content/uploads/2018/11/Five-stars-logo-by-meisuseno-312x208.jpg"
+                        alt="shape1" style="height: 60px; width: 80px; margin-top: 3px;">
+                    </div>
+
+                  </div>
                 </div>
               </div><!-- .slick-slide-in -->
               <div class="slick-slide-in">
@@ -542,6 +538,20 @@
                   <div class="st-testimonial-text">A very good hospital particularly in respect of varicose veins
                     treatment. Very advanced treatment with radiofrequency ablation.</div>
                   <div class="st-quote"><i class="fas fa-quote-right"></i></div>
+                  <div style="display: flex; flex-direction: row;">
+                    <img
+                      src="https://th.bing.com/th/id/OIP.lsGmVmOX789951j9Km8RagHaHa?w=159&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                      alt="shape1" style="height: 30px; width: 30px; margin-top: 20px;">
+                    <div>
+                      <h6 style="margin-left: 15px; margin-top: 25px;">4.0/5.0</h6>
+                    </div>
+                    <div style="margin-left: 15px;">
+                      <img
+                        src="https://th.bing.com/th/id/OIP.gghRLbG7PwD-o9smBv3vZAHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                        alt="shape1" style="height: 60px; width: 80px; margin-top: 3px;">
+                    </div>
+
+                  </div>
                 </div>
               </div><!-- .slick-slide-in -->
 
@@ -828,7 +838,10 @@
                   Are Varicose Veins a Serious Health Problem?
                   <span class="st-accordian-toggle fa fa-angle-down"></span>
                 </div>
-                <div class="st-accordian-body">Varicose veins is a progressive disease. It may cause tolerable symptoms like burning and itching, but as the condition becomes more serious, varicose veins cause swelling and painful ulcers. Early treatment is required to keep your body pain-free and your venous system healthy.
+                <div class="st-accordian-body">Varicose veins is a progressive disease. It may cause tolerable symptoms
+                  like burning and itching, but as the condition becomes more serious, varicose veins cause swelling and
+                  painful ulcers. Early treatment is required to keep your body pain-free and your venous system
+                  healthy.
                 </div>
               </div><!-- .st-accordian -->
               <div class="st-accordian">
@@ -836,7 +849,9 @@
                   How Are Varicose Veins Treated?
                   <span class="st-accordian-toggle fa fa-angle-down"></span>
                 </div>
-                <div class="st-accordian-body">At Hyderabad Vein Center, only non-surgical methods are used to treat varicose veins. Local anaesthesia is used before the procedure, so you will not feel any pain, and you can start walking within a few hours of the procedure.
+                <div class="st-accordian-body">At Hyderabad Vein Center, only non-surgical methods are used to treat
+                  varicose veins. Local anaesthesia is used before the procedure, so you will not feel any pain, and you
+                  can start walking within a few hours of the procedure.
                 </div>
               </div><!-- .st-accordian -->
               <div class="st-accordian">
@@ -844,7 +859,8 @@
                   Will Insurance Cover My Treatment?
                   <span class="st-accordian-toggle fa fa-angle-down"></span>
                 </div>
-                <div class="st-accordian-body">We accept most major insurances in India. However, the amount of coverage depends on your insurance plan. Please note that we do not accept Aarogyasri Health Insurance.
+                <div class="st-accordian-body">We accept most major insurances in India. However, the amount of coverage
+                  depends on your insurance plan. Please note that we do not accept Aarogyasri Health Insurance.
                 </div>
               </div><!-- .st-accordian -->
               <div class="st-accordian">
@@ -987,7 +1003,7 @@
           <div class="col-lg-10 offset-lg-1">
             <!-- Contact Form -->
             <form method="POST"
-              action="https://script.google.com/macros/s/AKfycbyAVBs2oZAG-401ikyM0Vr62_CKFm1xJanU5RI6-CJi_7jEG6fpo3upnrPfBcde-0GaQw/exec"
+              action="https://script.google.com/macros/s/AKfycbwjgpPM0v50FmoTeo88GKESf0L-0vWmZMSgS5ugcObwghJySGIbF3NgALNlw4YC4n9Y8g/exec"
               name="contact-form">
               <div id="st-alert1"></div>
               <div class="row">
@@ -1049,7 +1065,7 @@
         <div class="st-height-b40 st-height-lg-b40"></div>
         <!-- Contact Form -->
         <form method="POST"
-          action="https://script.google.com/macros/s/AKfycbx7PNg8Xv45OsB4G65sSFFhL0-WYxMzEDk0UxeC_WrermSeNJCLU6o7odRcwhVr6ZcgbA/exec"
+          action="https://script.google.com/macros/s/AKfycbwjgpPM0v50FmoTeo88GKESf0L-0vWmZMSgS5ugcObwghJySGIbF3NgALNlw4YC4n9Y8g/exec"
           name="contact-form">
           <div id="st-alert1"></div>
           <div class="row">
@@ -1145,13 +1161,16 @@
     <div class="st-main-footer">
       <div class="container">
         <div class="row">
+          <!-- Footer Widget 1: About -->
           <div class="col-lg-3">
             <div class="st-footer-widget">
               <div class="st-text-field">
-                <img src="assets/img/MainLogo.png" alt="Nischinto" class="st-footer-logo">
+                <!-- Ensure the logo is not affected by other elements -->
+                <img src="assets/img/MainLogo.png" alt="Nischinto" class="st-footer-logo"
+                  style="max-width: 100%; height: auto;">
                 <div class="st-height-b25 st-height-lg-b25"></div>
                 <div class="st-footer-text">Hyderabad Vein Center is India's first and only center providing end-to-end
-                  vein care.</div>
+                  vein care. <br> <br> Copyrights Reserved to Hyderabad Vein Center 2024</div>
                 <div class="st-height-b25 st-height-lg-b25"></div>
                 <ul class="st-social-btn st-style1 st-mp0">
                   <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
@@ -1159,10 +1178,12 @@
                   <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
                   <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
                 </ul>
+                <br> <br> Copyrights Reserved to Hyderabad Vein Center 2024
               </div>
             </div>
           </div><!-- .col -->
 
+          <!-- Footer Widget 2: Contact Us -->
           <div class="col-lg-3">
             <div class="st-footer-widget">
               <h2 class="st-footer-widget-title" style="margin-top: 10px;">Contact Us</h2>
@@ -1175,25 +1196,30 @@
                   <a href="tel:+917207947968">+91 7207947968</a>
                 </li>
               </ul>
-
             </div>
           </div><!-- .col -->
-        </div>
-      </div>
-    </div>
-    <div class="st-copyright-wrap">
-      <div class="container">
-        <div class="st-copyright-in">
-          <div class="st-left-copyright">
-            <div class="st-copyright-text">Copyrights Reserved to Hyderabad Vein Center 2024 </div>
-          </div>
-          <div class="st-right-copyright">
-            <div id="st-backtotop"><i class="fas fa-angle-up"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+          <!-- Footer Widget 3: Google Map -->
+          <div class="col-lg-6">
+            <div class="st-footer-widget">
+                <h2 class="st-footer-widget-title">Find Us on Google Maps</h2>
+                <div class="st-google-map" style="width: 100%; height: 100px; margin-left: 40px;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.289021557113!2d78.39578757377285!3d17.49371139973627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91fe3fb6ecd7%3A0xc3fa10fec8a6ff52!2sAvis%20Vascular%20Centre%20-%20Kukatpally%20(%20Dr.%20Rajah%20V%20Koppala%20)!5e0!3m2!1sen!2sin!4v1734101106752!5m2!1sen!2sin"
+                        width="100%" height="100" frameborder="0" style="border:0; margin-bottom: 100px;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                    </iframe>
+                </div>
+            </div>
+        </div><!-- .col -->
+        
+        </div><!-- .row -->
+      </div><!-- .container -->
+    </div><!-- .st-main-footer -->
+
+    <!-- Copyright Section -->
+   
   </footer>
+
   <!-- End Footer -->
 
   <!-- Start Video Popup -->
@@ -1214,8 +1240,20 @@
   <!-- End Video Popup -->
 
   <script>
+    document.querySelectorAll('.st-smooth-move').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();  // Prevent default anchor behavior
+        
+        // Get the section id from the data-target attribute
+        const targetSection = this.getAttribute('data-target');
   
-
+        // Smoothly scroll to the target section
+        document.querySelector(`#${targetSection}`).scrollIntoView({ behavior: 'smooth' });
+  
+        // Change the URL without reloading the page
+        history.pushState(null, null, `/${targetSection}`);
+      });
+    });
   </script>
 
   <!-- Scripts -->
