@@ -24,197 +24,72 @@
 
 </head>
 <style>
-  .modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    z-index: 99999;
-    /* Ensure modal appears above all other elements */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Black background with opacity */
-    display: flex;
-    /* Flexbox for centering */
-    align-items: center;
-    /* Center vertically */
-    justify-content: center;
-    /* Center horizontally */
-    padding: 10px;
-    /* Prevent content from touching the edges */
-    box-sizing: border-box;
-    /* Ensures padding doesn't affect width */
-    overflow: hidden;
-    /* Prevent scrolling of the background */
+ .modal {
+  display: none; /* Hidden by default */
+  position: fixed; 
+  z-index: 9999; /* Ensure modal is on top of all other content */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  position: relative; /* Ensure modal content is positioned correctly */
+  z-index: 10000; /* Ensure modal content stays above scrolling text */
+}
+
+/* The Close Button */
+.close-btn {
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Styling for the scrolling text */
+.st-section-heading-subtitle {
+  position: relative;
+  z-index: 10; /* Ensures scrolling text does not overlay on form */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* If you want the scrolling text to scroll, you can add animation */
+
+
+/* Animation for scrolling text */
+@keyframes scroll-text {
+  from {
+    transform: translateX(100%);
   }
-
-  /* Make modal content scrollable */
-  .modal-content {
-    max-height: 80vh;
-    /* Set max height */
-    overflow-y: auto;
-    /* Allow vertical scrolling */
-    padding: 20px;
+  to {
+    transform: translateX(-100%);
   }
-
-  /* Ensure button is always visible at the bottom */
-  .st-height-b40 {
-    margin-bottom: 50px;
-    /* Adjust space for button visibility */
-  }
-
-  /* Ensure proper visibility of content and button in mobile view */
-  @media screen and (max-width: 768px) {
-    .modal-content {
-      max-height: 60vh;
-      /* Adjust for mobile */
-      padding: 10px;
-      /* Adjust padding */
-    }
-
-    .st-section-heading,
-    .st-form-field {
-      padding: 10px 0;
-      /* Ensure adequate padding */
-    }
-
-    .st-btn {
-      position: sticky;
-      bottom: 10px;
-      /* Sticky button */
-      width: 100%;
-      /* Full width button */
-    }
-  }
-
-  .st-site-header {
-    z-index: 1000;
-    /* Adjust this to a value lower than the modal */
-    position: relative;
-    /* Ensure it respects stacking order */
-  }
-
-  textarea {
-    height: 3em;
-    /* Set height for two lines */
-    line-height: 1.5em;
-    /* Adjust line height to fit 2 lines of text */
-    padding: 0.5em;
-    /* Padding for spacing inside the textarea */
-    resize: none;
-    /* Disable resize feature */
-  }
+}
 
 
-  /* Modal content styling */
-  .modal-content {
-    background-color: #fff;
-    margin: auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    /* Reduced width for mobile screens */
-    max-width: 600px;
-    position: relative;
-    box-sizing: border-box;
-    /* Includes padding in the width calculation */
-  }
-
-  /* Close button styling */
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  /* Button Styles (Scoped to Modal) */
-  .modal .st-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    outline: none;
-    /* Prevent focus outline */
-  }
-
-  .modal .st-color1 {
-    background-color: #4CAF50;
-    /* Green for submit button */
-    color: #fff;
-  }
-
-  .modal .st-color1:hover {
-    background-color: #45a049;
-  }
-
-  .modal .st-color1:focus {
-    background-color: #4CAF50;
-    /* Prevent color change on click */
-  }
-
-  .modal .st-color2 {
-    background-color: #f44336;
-    /* Red for cancel button */
-    color: #fff;
-  }
-
-  .modal .st-color2:hover {
-    background-color: #d32f2f;
-  }
-
-  .modal .st-color2:focus {
-    background-color: #f44336;
-    /* Prevent color change on click */
-  }
-
-  /* Media Queries for Mobile */
-  @media (max-width: 768px) {
-    .modal-content {
-      margin: 10% auto;
-      /* Ensures the form is not hidden at the top */
-      padding: 15px;
-      /* Adjust padding for smaller screens */
-      width: 95%;
-      /* Takes up most of the screen on mobile */
-    }
-
-    .close {
-      top: 5px;
-      /* Adjust position of close button for mobile */
-      right: 10px;
-      font-size: 24px;
-      /* Slightly smaller for mobile */
-    }
-  }
-  .st-btn {
-    width: 300px; /* 200px width for webview */
-    padding: 15px; /* Adjust padding */
-    font-size: 16px; /* Font size */
-  }
-
-  /* Responsive Styling for Mobile */
-  @media (max-width: 768px) {
-    .st-btn {
-      width: 100%; /* Full width for mobile view */
-      padding: 15px; /* Adjust padding for better touch experience */
-      font-size: 16px; /* Larger font for better readability */
-    }
-  }
 </style>
 
 <body>
@@ -226,9 +101,7 @@
 
     gtag('config', 'AW-16800505551');
   </script>
-  <script>
-    gtag('event', 'conversion', { 'send_to': 'AW-16800505551/jcHeCJGftPYZEM-9jcs-' });
-  </script>
+  
   <div class="st-perloader">
     <div class="st-perloader-in">
       <div class="st-wave-first">
@@ -366,7 +239,7 @@
                 <img src="assets/img/No-1.png" alt="shape1" style="height: 50px; width: 50px;">
               </div>
               <h2 class="st-iconbox-title">No Cutting or Stitching</h2>
-              <div class="st-iconbox-text">We only provide non-surgical treatments that do not cause much pain.</div>
+              <div class="st-iconbox-text">We only provide non-surgical treatments that cause little or no pain.</div>
             </div>
             <div class="st-height-b0 st-height-lg-b30"></div>
           </div>
@@ -389,7 +262,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
-            <div class="st-iconbox st-style1">
+            <div class="st-iconbox st-style1" style="margin-top: 10px;">
               <div class="st-iconbox-icon st-purple-box">
                 <img src="assets/img/insurance.png" alt="shape1" style="height: 50px; width: 50px;">
               </div>
@@ -400,28 +273,30 @@
             <div class="st-height-b0 st-height-lg-b30"></div>
           </div><!-- .col -->
           <div class="col-lg-4">
-            <div class="st-iconbox st-style1">
+            <div class="st-iconbox st-style1" style="margin-top: 10px;">
               <div class="st-iconbox-icon st-green-box">
 
                 <img src="assets/img/usfda-certificate-service.png" alt="shape1" style="height: 50px; width: 50px;">
               </div>
-              <h2 class="st-iconbox-title">USFDA Treatments.
+              <h2 class="st-iconbox-title">USFDA Treatments
               </h2>
-              <div class="st-iconbox-text"> We follow international standards of treatment</div>
+              <div class="st-iconbox-text"> We follow international standards of treatment.</div>
             </div>
-            <div class="st-height-b0 st-height-lg-b30"></div>
+            <div class="st-height-b0 st-height-lg-b30" style="margin-top: 10px;"></div>
           </div><!-- .col -->
           <div class="col-lg-4">
-            <div class="st-iconbox st-style1">
-              <div class="st-iconbox-icon st-red-box">
+            <div class="st-iconbox st-style1" style="margin-top: 10px;">
+              <div class="st-iconbox-icon st-green-box">
+
                 <img src="assets/img/no side-effect.png" alt="shape1" style="height: 50px; width: 50px;">
               </div>
               <h2 class="st-iconbox-title">Zero Side Effects
               </h2>
-              <div class="st-iconbox-text">The treatments rarely cause any side effects.</div>
+              <div class="st-iconbox-text">The treatments rarely cause any side effects./div>
             </div>
-            <div class="st-height-b0 st-height-lg-b30"></div>
+            <div class="st-height-b0 st-height-lg-b30" style="margin-top: 10px;"></div>
           </div><!-- .col -->
+         
         </div>
       </div>
     </section>
@@ -480,7 +355,7 @@
       <div class="st-height-b120 st-height-lg-b80"></div>
       <div class="container">
         <div class="st-section-heading st-style1">
-          <h2 class="st-section-heading-title">Patient Testimonials
+          <h2 class="st-section-heading-title" style="color: #29265c;">Patient Testimonials
           </h2>
           <div class="st-seperator">
             <!-- <div class="st-seperator-left wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
@@ -488,7 +363,7 @@
             <div class="st-seperator-right wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div> -->
           </div>
           <div class="st-section-heading-subtitle">
-            <h3>Read what our patients say about us.</h3>
+            <h3 style="color: #29265c;">Read what our patients say about us.</h3>
           </div>
         </div>
         <div class="st-height-b40 st-height-lg-b40"></div>
@@ -1014,10 +889,10 @@
       <div class="st-height-b120 st-height-lg-b80"></div>
       <div class="container">
         <div class="st-section-heading st-style1">
-          <h2 class="st-section-heading-title">Book Your Appointment</h2>
+          <h2 class="st-section-heading-title" style="color: #29265c;">Book Your Appointment</h2>
           <div class="st-seperator"></div>
           <div class="st-section-heading-subtitle">
-           <strong>  Contact Us Now on +91 7207947968 & Get Ultrasound Doppler Screening Worth ₹4500 for FREE.</strong>
+           <strong>  Contact Us Now on +91 7207947968 & Get <h3>Ultrasound Doppler Screening Worth ₹4500 for FREE. </h3></strong>
           </div>
         </div>
      
@@ -1079,96 +954,70 @@
  
 
     
-    <div id="leadMagnetModal" class="modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.8); z-index: 9999;  margin-top: 20px;">
-      <div class="modal-content" style="background: #fff; padding: 20px; border-radius: 10px; max-width: 600px; width: 90%; position: relative;">
-        <span class="close" id="closeModal" style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 24px; color: #000;">&times;</span>
-        <div class="st-section-heading st-style1">
-          <h2 class="st-section-heading-title">Book Your Appointment</h2>
-          <div class="st-seperator"></div>
-          <div class="st-section-heading-subtitle">
-            <strong>  Contact Us Now on +91 7207947968 & Get Ultrasound Doppler Screening Worth ₹4500 for FREE.</strong>
+    <div id="contact-modal" class="modal">
+      <div class="modal-content">
+        <!-- Removed the close button -->
+         <span class="close-btn">&times;</span> 
+    
+        <section class="st-shape-wrap" id="contact">
+          <div class="st-shape1"><img src="assets/img/shape/contact-shape1.svg" alt="shape1"></div>
+          <div class="st-shape2"><img src="assets/img/shape/contact-shape2.svg" alt="shape2"></div>
+          <div class="container">
+            <div class="st-section-heading st-style1">
+              <h2 class="st-section-heading-title">Book Your Appointment</h2>
+              <div class="st-section-heading-subtitle">
+                <strong>  Contact Us Now on +91 7207947968 & Get <h3>Ultrasound Doppler Screening Worth <br>₹4500 for FREE. </h3></strong>
+               </div>
+            </div>
+            <form method="POST" action="https://script.google.com/macros/s/AKfycbwjgpPM0v50FmoTeo88GKESf0L-0vWmZMSgS5ugcObwghJySGIbF3NgALNlw4YC4n9Y8g/exec">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Mr./Mrs." required>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" placeholder="+91 1417 234 234" required>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label for="udate">Booking Date</label>
+                    <input name="udate" type="text" id="udate" placeholder="dd/mm/yy">
+                    <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="st-form-field st-style1">
+                    <label for="umsg">Message</label>
+                    <textarea cols="30" rows="10" id="umsg" name="umsg" placeholder="Write something here..."></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="appointment-submit" name="submit">
+                    Book Appointment
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
-          
-        </div>
-        <div class="st-height-b40 st-height-lg-b40"></div>
-        <!-- Contact Form -->
-        <form method="POST" action="https://script.google.com/macros/s/AKfycbwjgpPM0v50FmoTeo88GKESf0L-0vWmZMSgS5ugcObwghJySGIbF3NgALNlw4YC4n9Y8g/exec" name="contact-form">
-          <div id="st-alert1"></div>
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="st-form-field st-style1">
-                <label for="your-name">Full Name</label>
-                <input type="text" name="your-name" placeholder="Your Name" required>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="st-form-field st-style1">
-                <label for="your-number">Phone Number</label>
-                <input type="text" name="your-number" placeholder="Your Number" required>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="st-form-field st-style1">
-                <label for="your-email">Email Address</label>
-                <input type="email" name="your-email" placeholder="example@gmail.com" required>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="st-form-field st-style1">
-                <label for="udate">Booking Date</label>
-                <input name="udate" type="text" placeholder="dd/mm/yy">
-                <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="st-form-field st-style1">
-                <label for="message">Message</label>
-                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-              </div>
-            </div>
-            <div class="col-lg-12 d-flex justify-content-between">
-              <!-- Submit Button -->
-              <button class="st-btn st-color1" type="submit" id="submit">
-                Book Appointment
-              </button>
-            </div>
-          </div>
-        </form>
+        </section>
       </div>
     </div>
     
 
 
 
-    <script>
-      // JavaScript to handle modal and Cancel button
-      document.addEventListener("DOMContentLoaded", function () {
-        var modal = document.getElementById("leadMagnetModal");
-        var closeModal = document.getElementById("closeModal");
-        var cancelButton = document.getElementById("cancelButton");
-
-        // Show modal when page loads
-        modal.style.display = "block";
-
-        // Close modal on clicking 'X'
-        closeModal.onclick = function () {
-          modal.style.display = "none";
-        };
-
-        // Close modal on clicking Cancel button
-        cancelButton.onclick = function () {
-          modal.style.display = "none";
-        };
-
-        // Close modal when clicking outside the modal content
-        window.onclick = function (event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        };
-      });
-    </script>
-
+ 
 
     <div class="st-height-b120 st-height-lg-b80"></div>
     </section>
@@ -1197,8 +1046,8 @@
                 <img src="assets/img/MainLogo.png" alt="Nischinto" class="st-footer-logo"
                   style="max-width: 100%; height: auto;">
                 <div class="st-height-b25 st-height-lg-b25"></div>
-                <div class="st-footer-text">Hyderabad Vein Center is India's first and only center providing end-to-end
-                  vein care.</div>
+                <div class="st-footer-text" style="font-size: medium;"><strong>Hyderabad Vein Center is India's first and only center providing end-to-end
+                  vein care.</strong> </div>
                 <div class="st-height-b25 st-height-lg-b25"></div>
                 <ul class="st-social-btn st-style1 st-mp0">
                   <li><a href="#"><i class="fab fa-facebook-square" style="color: #66387e;"></i></a></li>
@@ -1206,7 +1055,7 @@
                   <li><a href="#"><i class="fab fa-pinterest-square" style="color: #66387e;"></i></a></li>
                   <li><a href="#"><i class="fab fa-twitter-square" style="color: #66387e;"></i></a></li>
                 </ul>
-                <br> <br> Copyrights Reserved to Hyderabad Vein Center 2024
+                <br> <br><div style="font-size: medium;">  <strong>Copyrights Reserved to Hyderabad Vein Center 2024</strong> </div>
               </div>
             </div>
           </div><!-- .col -->
@@ -1216,12 +1065,12 @@
             <div class="st-footer-widget">
               <h2 class="st-footer-widget-title" style="margin-top: 10px; color: #66387e;  " >Contact Us</h2>
               <ul class="st-footer-contact-list st-mp0">
-                <li><span class="st-footer-contact-title">Address:</span> kukatpally, Hyderabad</li>
-                <li><span class="st-footer-contact-title">Email:</span>
-                  <a href="mailto:info@hyderabadveincenter.com">info@hyderabadveincenter.com</a>
+                <li><span class="st-footer-contact-title"> <strong> Address:</strong> </span> <strong> kukatpally, Hyderabad</strong>  </li>
+                <li><span class="st-footer-contact-title"><strong>Email:</strong></span>
+                  <a href="mailto:info@hyderabadveincenter.com"><strong>info@hyderabadveincenter.com</strong></a>
                 </li>
-                <li><span class="st-footer-contact-title">Phone:</span>
-                  <a href="tel:+917207947968">+91 7207947968</a>
+                <li><span class="st-footer-contact-title"><strong>Phone:</strong>  </span>
+                  <a href="tel:+917207947968"><strong>+91 7207947968</strong>  </a>
                 </li>
               </ul>
             </div>
@@ -1266,6 +1115,29 @@
     </div>
   </div>
   <!-- End Video Popup -->
+
+  <script>
+    // Get the modal and close button
+    var modal = document.getElementById("contact-modal");
+    var closeBtn = document.getElementsByClassName("close-btn")[0];
+    
+    // Show the modal when the page loads
+    window.onload = function() {
+      modal.style.display = "block";
+    };
+    
+    // Close the modal if the user clicks anywhere outside the modal content
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+    
+    // Close the modal when the close button (cross mark) is clicked
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    };
+    </script>
 
   <script>
     document.querySelectorAll('.st-smooth-move').forEach(link => {
