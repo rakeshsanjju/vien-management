@@ -951,59 +951,76 @@
       <div class="modal-content">
         <!-- Removed the close button -->
          <span class="close-btn">&times;</span> 
-    
-        <section class="st-shape-wrap" id="contact">
+
+         <section class="st-shape-wrap" id="contact">
           <div class="st-shape1"><img src="assets/img/shape/contact-shape1.svg" alt="shape1"></div>
           <div class="st-shape2"><img src="assets/img/shape/contact-shape2.svg" alt="shape2"></div>
+          <div class="st-height-b120 st-height-lg-b80"></div>
           <div class="container">
             <div class="st-section-heading st-style1">
-              <h2 class="st-section-heading-title">Book Your Appointment</h2>
+              <h2 class="st-section-heading-title" style="color: #29265c;">Book Your Appointment</h2>
+              <div class="st-seperator"></div>
               <div class="st-section-heading-subtitle">
-                <strong>  Contact Us Now on +91 7207947968 & Get <h3>Ultrasound Doppler Screening Worth <br>₹4500 for FREE. </h3></strong>
-               </div>
-            </div>
-            <form method="POST" action="https://script.google.com/macros/s/AKfycbwjgpPM0v50FmoTeo88GKESf0L-0vWmZMSgS5ugcObwghJySGIbF3NgALNlw4YC4n9Y8g/exec">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="Mr./Mrs." required>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="phone">Phone Number</label>
-                    <input type="text" id="phone" name="phone" placeholder="+91 1417 234 234" required>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="udate">Booking Date</label>
-                    <input name="udate" type="text" id="udate" placeholder="dd/mm/yy">
-                    <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="st-form-field st-style1">
-                    <label for="umsg">Message</label>
-                    <textarea cols="30" rows="10" id="umsg" name="umsg" placeholder="Write something here..."></textarea>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="appointment-submit" name="submit">
-                    Book Appointment
-                  </button>
-                </div>
+               <strong>  Contact Us Now on +91 7207947968 & Get <h3>Ultrasound Doppler Screening Worth ₹4500 for FREE. </h3></strong>
               </div>
-            </form>
+            </div>
+         
           </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10 offset-lg-1">
+                <!-- Contact Form -->
+                <form method="POST"
+                  action="https://script.google.com/macros/s/AKfycbwjgpPM0v50FmoTeo88GKESf0L-0vWmZMSgS5ugcObwghJySGIbF3NgALNlw4YC4n9Y8g/exec"
+                  name="contact-form">
+                  <div id="st-alert1"></div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="st-form-field st-style1">
+                        <label for="your-name">Full Name</label>
+                        <input type="text" name="your-name" placeholder="Your Name" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="st-form-field st-style1">
+                        <label for="your-number">Phone Number</label>
+                        <input type="text" name="your-number" placeholder="Your Number" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="st-form-field st-style1">
+                        <label for="your-email">Email Address</label>
+                        <input type="email" name="your-email" placeholder="example@gmail.com" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="st-form-field st-style1">
+                        <label for="udate">Booking Date</label>
+                        <input name="udate" type="text" placeholder="dd/mm/yy">
+                        <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="st-form-field st-style1">
+                        <label for="message">Message</label>
+                        <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="submit" style="background-color: #66387e;">
+                        Book Appointment
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+    
+          
         </section>
+       
+
       </div>
     </div>
     
