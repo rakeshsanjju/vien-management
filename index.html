@@ -22,9 +22,15 @@
   <link rel="stylesheet" href="assets/css/select2.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <script>
-    gtag('event', 'conversion', { 'send_to': 'AW-16800505551/jcHeCJGftPYZEM-9jcs-' });
-  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16800505551"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16800505551');
+</script>
 
 </head>
 <style>
@@ -97,6 +103,13 @@
 </style>
 
 <body>
+  <script>
+    window.addEventListener('load', function () {
+      if(window.location.pathname.includes('/thank-you.html')){
+          gtag('event', 'conversion', {'send_to': 'AW-16800505551/jcHeCJGftPYZEM-9jcs-'});
+      }
+  })
+  </script>
 
   
   <div class="st-perloader">
