@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyderabad Vein Center</title>
-  <!-- Favicon Icon -->
-  <link rel="icon" href="assets/img/MainLogo.png" />
+    <!-- Favicon Icon -->
+    <link rel="icon" href="assets/img/MainLogo.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16800505551"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-16800505551');
+    </script>
 </head>
+
 <body>
+    <script>
+        window.addEventListener('load', function () {
+          if(window.location.pathname.includes('/thank-you.html')){
+              gtag('event', 'conversion', {'send_to': 'AW-16800505551/jcHeCJGftPYZEM-9jcs-'});
+          }
+      })
+      </script>
     <div style="display: flex; justify-content: center; align-items: center;">
-        <img  src="./assets/img/MainLogo.png"  style="width: 30%; height: 30%;"/><br>
-        
+        <img src="./assets/img/MainLogo.png" style="width: 30%; height: 30%;" /><br>
+
     </div>
     <div>
         <h1 style="text-align: center;">Thanks for Submitting Form</h1>
     </div>
 </body>
+
 </html>
